@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 
-class NavBar extends Component {
+class Navbar extends Component {
     render() {
         return (
-            <div>
-                <i className="fa-solid fa-leaf"></i>
-                Habit Tracker {this.props.count}
-            </div>
+            <nav className="navbar">
+                <i className="navbar-logo fa-solid fa-leaf"/>
+                <span>Habit Tracker</span>
+                <span className="navbar-count">{this.props.habitsCount}</span>
+            </nav>
         );
     }
 }
 
-export default NavBar;
+export default Navbar;

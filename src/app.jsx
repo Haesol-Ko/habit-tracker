@@ -3,7 +3,8 @@ import Habits from "./components/habits";
 
 import React, {Component} from 'react';
 import InputBar from "./components/inputBar";
-import NavBar from "./components/navBar";
+import Navbar from "./components/navbar";
+import habits from "./components/habits";
 
 class App extends Component {
     state = {
@@ -13,6 +14,11 @@ class App extends Component {
             {id: 3, name: 'Coding', count: 0},
         ],
     };
+
+    countHabit = () => {
+        const count = this.state.habits.filter(habit => habit.count >= 1);
+        return count.length;
+    }
 
     handleIncrement = (habit) => {
         const habits = [...this.state.habits];
@@ -35,17 +41,37 @@ class App extends Component {
         this.setState({habits});
     }
 
+    handleAdd = (inputValue) => {
+        const newId = this.state.habits.reduce((prev, curr) => {
+            return Math.max(prev.id, curr.id);
+        }, 1) + 1;
+        const arr =[1,5,2,6];
+        const max = arr.reduce(
+            (acc, curr) => Math.max(acc.id, curr.id)
+        , 1);
+        alert(max);
+        const newHabit = {id: newId, name: inputValue, count: 0};
+        const habits = [...this.state.habits, newHabit];
+        this.setState({habits});
+    }
+
     render() {
         return (
-        <>
-          <NavBar />
-          <InputBar />
-          <Habits
-          habits={this.state.habits}
-          />
-        </>
-    );
-  }
+            <>
+                <Navbar
+                    habitsCount={this.countHabit()}/>
+                <InputBar
+                    onAdd={this.handleAdd}
+                />
+                <Habits
+                    habits={this.state.habits}
+                    onIncrement={this.handleIncrement}
+                    onDecrement={this.handleDecrement}
+                    onDelete={this.handleDelete}
+                />
+            </>
+        );
+    }
 }
 
 export default App;

@@ -1,13 +1,38 @@
+* {
+  box-sizing: border-box;
+}
 button {
   outline: none;
   border: 0;
   cursor: pointer;
 }
 
-.habit {
-  font-size: 2.5rem;
-  padding: 0.5em;
-  list-style: none;
+.navbar {
+  background-color: blanchedalmond;
+  font-size: 2rem;
+  padding: 1em;
+  /*display: flex;*/
+  /*align-items: center;*/
+}
+
+.input-bar {
+  padding: 1rem;
+}
+
+.input-bar__input {
+  font-size: 1.5rem;
+  height: 1.2em;
+  width: 15em;
+}
+
+.input-bar__add-button,
+.reset-all-btn {
+  margin: 0.8rem;
+  font-size: 1.5rem;
+  height: 1.5em;
+  background-color: darkgreen;
+  color: white;
+
 }
 
 .habit-count {
@@ -24,6 +49,19 @@ button {
   border-radius: 50%;
 }
 
+.navbar-count {
+  display: inline-block;
+  text-align: center;
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin-left: 0.2em;
+  background-color: green;
+  color: white;
+  border-radius: 50%;
+}
+
 .habit-button {
   font-size: 2.5rem;
   margin: 0 0.1em;
@@ -32,6 +70,11 @@ button {
 
 .habit-button:hover {
   opacity: 0.8;
+}
+
+.navbar-logo {
+  color: darkgreen;
+  margin-right: 0.5em;
 }
 
 .habit-increase,
