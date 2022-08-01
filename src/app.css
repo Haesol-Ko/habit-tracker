@@ -6,6 +6,9 @@ button {
   border: 0;
   cursor: pointer;
 }
+ul {
+  list-style: none;
+}
 
 .navbar {
   background-color: blanchedalmond;
@@ -15,24 +18,26 @@ button {
   /*align-items: center;*/
 }
 
-.input-bar {
+.add-form {
   padding: 1rem;
 }
 
-.input-bar__input {
-  font-size: 1.5rem;
-  height: 1.2em;
-  width: 15em;
+.add-input {
+  font-size: 2rem;
+  margin-right: 0.2em;
 }
 
-.input-bar__add-button,
-.reset-all-btn {
-  margin: 0.8rem;
+.add-button,
+.habits-reset {
   font-size: 1.5rem;
-  height: 1.5em;
-  background-color: darkgreen;
+  height: 100%;
+  padding: 0.3em 0.5em;
+  background-color: green;
   color: white;
+}
 
+.habit-name {
+  font-size: 2rem;
 }
 
 .habit-count {
